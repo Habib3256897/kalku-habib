@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Habib</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="habib">
+      <div class="wm">Kalkulator M Habib Rizieq</div>
+      <div id="kalkulator">
+        <input type="text" id="hasil" readonly />
+        <button onclick="hapus()">C</button>
+        <button onclick="tambahresult('%')">%</button>
+        <button onclick="tambahresult('/')">/</button>
+        <button onclick="tambahresult('*')">*</button>
+        <button onclick="tambahresult('7')">7</button>
+        <button onclick="tambahresult('8')">8</button>
+        <button onclick="tambahresult('9')">9</button>
+        <button onclick="tambahresult('-')">-</button>
+        <button onclick="tambahresult('4')">4</button>
+        <button onclick="tambahresult('5')">5</button>
+        <button onclick="tambahresult('6')">6</button>
+        <button onclick="tambahresult('+')">+</button>
+        <button onclick="tambahresult('1')">1</button>
+        <button onclick="tambahresult('2')">2</button>
+        <button onclick="tambahresult('3')">3</button>
+        <button onclick="tambahresult('0')">0</button>
+        <button onclick="tambahresult('00')">00</button>
+        <button onclick="tambahresult('.')">.</button>
+        <button onclick="hasil()">=</button>
+      </div>
+    </div>
+    <script>
+      function tambahresult(value) {
+        document.getElementById('hasil').value += value;
+      }
+
+      function hapus() {
+        document.getElementById('hasil').value = '';
+      }
+
+      function hasil() {
+        const resultField = document.getElementById('hasil');
+        try {
+          resultField.value = eval(resultField.value);
+        } catch (e) {
+          resultField.value = 'Error';
+        }
+      }
+    </script>
+  </body>
+</html>
